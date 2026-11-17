@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 import {
   Sparkles,
   User,
@@ -398,15 +397,8 @@ export default function Page() {
               
               <div className="relative z-10 flex flex-col sm:flex-row items-center gap-8 text-center sm:text-left">
                 <div className="w-28 h-28 rounded-3xl bg-gradient-to-tr from-purple-200 via-pink-200 to-sky-200 p-1 shadow-md">
-                  <div className="relative w-full h-full bg-white rounded-[22px] overflow-hidden">
-                    <Image
-                      src="/dharma.png"
-                      alt="Photo of Dharma"
-                      fill
-                      sizes="112px"
-                      className="object-cover"
-                      priority
-                    />
+                  <div className="w-full h-full bg-white rounded-[22px] flex items-center justify-center text-5xl">
+                    🐻
                   </div>
                 </div>
 
