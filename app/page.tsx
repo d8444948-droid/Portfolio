@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import {
   Sparkles,
   User,
@@ -23,6 +24,9 @@ import {
   Send,
   Trash2,
 } from "lucide-react";
+
+// 👉 Put Dharma's GitHub username here (the part after github.com/)
+const GITHUB_USERNAME = "d8444948-droid";
 
 interface Project {
   id: string;
@@ -394,8 +398,15 @@ export default function Page() {
               
               <div className="relative z-10 flex flex-col sm:flex-row items-center gap-8 text-center sm:text-left">
                 <div className="w-28 h-28 rounded-3xl bg-gradient-to-tr from-purple-200 via-pink-200 to-sky-200 p-1 shadow-md">
-                  <div className="w-full h-full bg-white rounded-[22px] flex items-center justify-center text-4xl">
-                    👾
+                  <div className="relative w-full h-full bg-white rounded-[22px] overflow-hidden">
+                    <Image
+                      src="/dharma.png"
+                      alt="Photo of Dharma"
+                      fill
+                      sizes="112px"
+                      className="object-cover"
+                      priority
+                    />
                   </div>
                 </div>
 
@@ -629,10 +640,10 @@ export default function Page() {
                 </div>
                 <div>
                   <div className="text-xs text-slate-400 font-medium">GitHub Account</div>
-                  <div className="text-sm font-bold text-slate-800">github.com</div>
+                  <div className="text-sm font-bold text-slate-800 truncate">github.com/{GITHUB_USERNAME}</div>
                 </div>
                 <a
-                  href="https://github.com"
+                  href={`https://github.com/${GITHUB_USERNAME}`}
                   target="_blank"
                   rel="noreferrer"
                   className="w-full py-2 bg-purple-50 hover:bg-purple-100 text-purple-700 rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
